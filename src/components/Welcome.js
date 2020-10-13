@@ -8,7 +8,7 @@ const Welcome = ({messages}) => {
     return (
         <div>
             {messages.map(message => (
-                <Message key={message.id} message={message.content}/>
+                <Message key={message.id} message={message}/>
             ))}
         </div>
 
