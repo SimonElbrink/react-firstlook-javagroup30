@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Welcome from "./components/Welcome";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+    state = {
+        applicationName: 'First Look at React!',
+        messages: [
+            {
+                id: 1,
+                content: 'Java Group 29'
+            },
+            {
+                id: 2,
+                content: 'Java Group 30'
+            },
+            {
+                id: 3,
+                content: 'Java Group 31'
+            },
+            {
+                id: 4,
+                content: '.Net Group 32'
+            },
+        ]
+    }
+
+    render() {
+        return (
+            <div>
+
+                {/* Sending the messages from state to "Welcome" component. */}
+                <Welcome messages={this.state.messages}/>
+            </div>
+        )
+    }
+
 }
 
 export default App;
